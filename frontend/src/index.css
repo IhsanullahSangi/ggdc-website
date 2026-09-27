@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-collegeDark: #0f2841;
+  --color-collegeCyan: #00b4d8;
+  --color-collegeGreen: #059669;
+  --font-heading: "Merriweather", serif;
+  --font-body: "Inter", sans-serif;
+}
