@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronRight, ChevronDown, ArrowLeft } from "lucide-react";
 import { navLinks } from "../utils/navData";
 import collegeLogo from "../assets/college-logo.jpeg";
@@ -10,13 +10,15 @@ const Header = () => {
   const [activeSubMenu, setActiveSubMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // 🌟 THE FIX: Reference target for the IntersectionObserver tripwire
+  const brandingRef = useRef(null);
+
   const currentSubMenuData = navLinks.find(
     (link) => link.name === activeSubMenu,
   );
 
   const location = useLocation();
 
-  // 1. This handles smoothly scrolling to sections (like Principal's Message)
   useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
@@ -28,56 +30,65 @@ const Header = () => {
     }
   }, [location]);
 
-  // 2. This tracks the scroll to make the Nav sticky and trigger the pop-up
+  // 🌟 THE FIX: Completely replaced unreliable scroll events with IntersectionObserver
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // As soon as the top branding banner is completely out of view, this becomes true
+        setIsScrolled(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0, // Triggers immediately when the last pixel vanishes
+      },
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (brandingRef.current) {
+      observer.observe(brandingRef.current);
+    }
+
+    return () => {
+      if (brandingRef.current) observer.unobserve(brandingRef.current);
+    };
   }, []);
 
   return (
-    <header className="font-body w-full relative">
-      {/* TIER 1: BRANDING (Visible initially, scrolls naturally out of view) */}
-      <div className="bg-white py-3 md:py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-3 md:gap-5 w-max group cursor-pointer"
-        >
-          <img
-            src={collegeLogo}
-            alt="GGDC Logo"
-            className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain flex-shrink-0 drop-shadow-sm transition-transform group-hover:scale-105"
-          />
-          <div className="flex flex-col justify-center">
-            <h1 className="font-heading font-bold text-collegeDark text-base sm:text-lg md:text-2xl lg:text-3xl uppercase tracking-wide leading-tight group-hover:text-collegeCyan transition-colors">
-              Government Girls Degree College Ghotki
-            </h1>
-            <p className="text-collegeGreen italic text-[10px] sm:text-xs md:text-sm lg:text-base font-medium mt-0.5 md:mt-1">
-              "Empowering Women Through Education"
-            </p>
-          </div>
-        </Link>
-      </div>
-
-      {/* Spacer prevents layout jumping when navbar becomes fixed */}
-      {isScrolled && <div className="h-14 lg:h-16 w-full" />}
-
-      {/* TIER 2: NAVIGATION (Bulletproof Fixed on scroll) */}
-      <nav
-        className={`bg-collegeDark text-white shadow-md transition-all duration-300 w-full ${
-          isScrolled ? "fixed top-0 left-0 z-50" : "relative z-50"
-        }`}
+    <>
+      {/* TIER 1: BRANDING (Un-nested so it doesn't restrict the sticky nav) */}
+      <header
+        ref={brandingRef}
+        className="font-body w-full bg-white py-4 px-4 sm:px-6 lg:px-8"
       >
+        <div className="max-w-7xl mx-auto">
+          <Link
+            to="/"
+            className="flex items-center gap-3 md:gap-5 w-full group cursor-pointer"
+          >
+            <img
+              src={collegeLogo}
+              alt="GGDC Logo"
+              className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain flex-shrink-0 drop-shadow-sm transition-transform group-hover:scale-105"
+            />
+            <div className="flex flex-col justify-center flex-1">
+              <h1 className="font-heading font-bold text-collegeDark text-[14px] sm:text-lg md:text-2xl lg:text-3xl uppercase tracking-wide leading-snug group-hover:text-collegeCyan transition-colors">
+                Government Girls Degree College Ghotki
+              </h1>
+              <p className="text-collegeGreen italic text-[10px] sm:text-xs md:text-sm lg:text-base font-medium mt-1">
+                "Empowering Women Through Education"
+              </p>
+            </div>
+          </Link>
+        </div>
+      </header>
+
+      {/* TIER 2: NAVIGATION (Uses CSS sticky globally, immune to scroll bugs) */}
+      <nav className="font-body bg-collegeDark text-white shadow-md w-full sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Flex container holding Desktop Menu OR Mobile Header components */}
-          <div className="flex justify-between items-center h-14 lg:h-16 w-full">
+          <div className="flex justify-between items-center h-14 lg:h-16 w-full gap-2">
             {/* --- MOBILE MAGIC POP-UP (Left Side) --- */}
             <Link
               to="/"
-              className={`lg:hidden flex items-center gap-2 transition-all duration-500 ease-out overflow-hidden hover:opacity-80 ${
+              className={`lg:hidden flex-1 min-w-0 flex items-center gap-2 transition-all duration-500 ease-out hover:opacity-80 ${
                 isScrolled
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-3 pointer-events-none"
@@ -90,7 +101,7 @@ const Header = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-heading font-bold text-white text-[10px] min-[375px]:text-[11px] sm:text-xs tracking-wide whitespace-nowrap">
+              <span className="font-heading font-bold text-white text-[10px] min-[375px]:text-[11px] sm:text-xs tracking-wide leading-tight line-clamp-2">
                 GOVERNMENT GIRLS DEGREE COLLEGE GHOTKI
               </span>
             </Link>
@@ -104,7 +115,6 @@ const Header = () => {
                 >
                   {link.subLinks ? (
                     <>
-                      {/* Dropdown Trigger */}
                       <span className="flex items-center gap-1 hover:text-collegeCyan transition-colors font-semibold tracking-wider text-sm py-5">
                         {link.name}
                         <ChevronDown
@@ -112,8 +122,6 @@ const Header = () => {
                           className="text-gray-300 group-hover:text-collegeCyan"
                         />
                       </span>
-
-                      {/* Dropdown List */}
                       <div className="absolute left-0 top-full mt-0 w-64 bg-white text-collegeDark shadow-xl rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border-t-4 border-collegeCyan z-50">
                         {link.subLinks.map((sub) => {
                           const actualHref = sub.href;
@@ -141,7 +149,6 @@ const Header = () => {
                       </div>
                     </>
                   ) : (
-                    /* Direct Link for items without subLinks (like CONTACT US) */
                     <Link
                       to={link.href || "#"}
                       className="flex items-center hover:text-collegeCyan transition-colors font-semibold tracking-wider text-sm py-5"
@@ -160,15 +167,15 @@ const Header = () => {
                   setIsOpen(!isOpen);
                   setActiveSubMenu(null);
                 }}
-                className="flex items-center gap-2 text-collegeCyan hover:text-white transition-colors py-2"
+                className="flex items-center gap-1.5 text-collegeCyan hover:text-white transition-colors py-2"
               >
-                <span className="font-body font-medium text-lg tracking-wide">
+                <span className="font-body font-medium text-base tracking-wide">
                   {isOpen ? "Close" : "Menu"}
                 </span>
                 {isOpen ? (
-                  <X size={32} strokeWidth={2.5} />
+                  <X size={28} strokeWidth={2.5} />
                 ) : (
-                  <Menu size={32} strokeWidth={2.5} />
+                  <Menu size={28} strokeWidth={2.5} />
                 )}
               </button>
             </div>
@@ -251,7 +258,7 @@ const Header = () => {
           </div>
         )}
       </nav>
-    </header>
+    </>
   );
 };
 

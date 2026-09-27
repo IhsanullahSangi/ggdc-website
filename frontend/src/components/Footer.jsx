@@ -88,20 +88,26 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="bg-[#0a1b2d] py-6 px-4 border-t border-white/10 mt-4">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4">
-          <div className="text-center">
-            <p className="text-gray-500 text-xs tracking-wide">
-             All rights Reserved © GGDC Ghotki 2026
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-3">
+          <p className="text-gray-500 text-xs tracking-wide text-center w-full">
+            All rights Reserved © GGDC Ghotki 2026
+          </p>
 
-          <div className="w-full flex flex-col justify-between items-center gap-3 text-gray-400 text-xs md:text-sm">
-            <p>Developed & Managed by Ihsanullah Sangi, Lecturer CS @ GGDC Ghotki</p>
-            {/* <div className="flex items-center gap-4">
+          <div className="w-full flex flex-col justify-center items-center gap-3 text-gray-400 text-xs md:text-sm">
+            {/* 🌟 THE FIX: Added 'text-center' to handle multiline wrapping perfectly */}
+            <p className="text-center leading-relaxed">
+              Developed & Managed by{" "}
+              <span className="text-collegeCyan font-medium tracking-wide">
+                Ihsanullah Sangi
+              </span>
+              , Lecturer CS @ GGDC Ghotki
+            </p>
+
+            {/* <div className="flex items-center gap-4 mt-1">
               <a href="#" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <span>|</span>
+              <span className="text-gray-600">|</span>
               <a href="#" className="hover:text-white transition-colors">
                 Terms of Services
               </a>

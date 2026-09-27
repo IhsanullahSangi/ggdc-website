@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { FaYoutube, FaFacebook, FaEnvelope } from "react-icons/fa";
 
-// 🌟 THE FIX: Import all three data arrays from the NewsEvents page
+// Import all three data arrays from the NewsEvents page
 import { announcements, newsItems, eventsItems } from "../pages/NewsEvents"; // Adjust path if needed
 
 const Hero = () => {
-  // 🌟 THE MAGIC LOGIC: Grab the 1st item of each array.
+  // Grab the 1st item of each array.
   // .filter(Boolean) safely removes any empty items if a category has no news yet!
   const recentNotices = [announcements[0], newsItems[0], eventsItems[0]].filter(
     Boolean,
@@ -65,21 +65,24 @@ const Hero = () => {
     <section className="w-full bg-slate-100 py-6 md:py-10 relative">
       <div className="absolute top-0 left-0 w-full h-[40%] bg-collegeDark z-0"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-0 sm:px-4 lg:px-8">
-        <div className="flex flex-col shadow-2xl bg-white sm:rounded-lg overflow-hidden border border-gray-200">
+      <div className="relative z-10 max-w-6xl mx-auto px-1.5 sm:px-6 lg:px-8">
+        <div className="flex flex-col shadow-2xl bg-white rounded-md sm:rounded-lg overflow-hidden border border-gray-200">
           {/* TOP HEADER BAR */}
           <div className="w-full flex flex-row">
-            <div className="bg-collegeGreen text-white font-heading font-bold px-4 py-3 md:px-6 md:py-4 text-[13px] sm:text-base md:text-xl lg:text-2xl flex items-center">
+            {/* 🌟 THE FIX: Added flex-1 here so the green background stretches across most of the bar */}
+            <div className="bg-collegeGreen flex-1 text-white font-heading font-bold px-3 py-3 md:px-6 md:py-4 text-[13px] sm:text-base md:text-xl lg:text-2xl flex items-center leading-snug">
               Welcome to Government Girls Degree College Ghotki
             </div>
 
-            <div className="bg-collegeDark flex-1 flex justify-end items-center px-4 py-3 md:px-6 md:py-4 gap-4 md:gap-6 text-white border-b-4 border-collegeDark sm:border-none">
+            {/* 🌟 THE FIX: Removed flex-1, added shrink-0 so it stays compact. Tightened the gap. */}
+            <div className="bg-collegeDark shrink-0 flex justify-end items-center px-4 py-3 md:px-6 md:py-4 gap-2.5 md:gap-4 text-white border-b-4 border-collegeDark sm:border-none">
               <a
                 href="mailto:girlsdegreecollegeghotki@gmail.com?subject=Website Inquiry"
                 className="hover:text-collegeCyan transition-colors"
                 title="Email the College"
               >
-                <FaEnvelope className="w-4 h-4 md:w-5 md:h-5" />
+                {/* 🌟 THE FIX: Reduced icon sizes (w-3.5 on mobile, w-4 on desktop) */}
+                <FaEnvelope className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </a>
               <a
                 href="https://youtube.com/@ggdcghotki?si=PZ0gldvl8-w6omEJ"
@@ -88,7 +91,7 @@ const Hero = () => {
                 className="hover:text-collegeCyan transition-colors"
                 title="Official YouTube Channel"
               >
-                <FaYoutube className="w-4 h-4 md:w-5 md:h-5" />
+                <FaYoutube className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61573783708422"
@@ -97,7 +100,7 @@ const Hero = () => {
                 className="hover:text-collegeCyan transition-colors"
                 title="Official Facebook Page"
               >
-                <FaFacebook className="w-4 h-4 md:w-5 md:h-5" />
+                <FaFacebook className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </a>
             </div>
           </div>
@@ -159,11 +162,11 @@ const Hero = () => {
           {/* BOTTOM ANNOUNCEMENT BAR */}
           <div className="w-full flex flex-row h-10 md:h-14 border-b-4 border-collegeDark relative">
             {/* Left Indicator Block */}
-            <div className="bg-white px-4 md:px-6 flex items-center justify-center gap-1.5 md:gap-2 min-w-[80px] md:min-w-[100px] z-10 border-r border-gray-100 shadow-sm">
+            <div className="bg-white px-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-2 min-w-[60px] md:min-w-[100px] z-10 border-r border-gray-100 shadow-sm">
               {recentNotices.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-sm transition-all duration-500 ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-sm transition-all duration-500 ${
                     index === activeIndex
                       ? "bg-collegeDark scale-125"
                       : "bg-collegeGreen opacity-30"
@@ -186,7 +189,7 @@ const Hero = () => {
                 recentNotices.map((notice, index) => (
                   <div
                     key={notice._id}
-                    className={`absolute w-full px-4 flex items-center h-full transition-all duration-500 ease-in-out ${
+                    className={`absolute w-full px-3 md:px-4 flex items-center h-full transition-all duration-500 ease-in-out ${
                       index === activeIndex
                         ? "opacity-100 translate-y-0 z-10"
                         : "opacity-0 translate-y-4 pointer-events-none z-0"
@@ -196,9 +199,9 @@ const Hero = () => {
                       href={notice.fileUrl || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-collegeDark transition-colors text-[12px] sm:text-sm md:text-base font-body font-medium truncate w-full flex items-center gap-2"
+                      className="text-white hover:text-collegeDark transition-colors text-[11px] min-[375px]:text-[12px] sm:text-sm md:text-base font-body font-medium truncate w-full flex items-center gap-1.5 md:gap-2"
                     >
-                      <span className="text-collegeCyan text-xs md:text-sm shrink-0">
+                      <span className="text-collegeCyan text-[10px] md:text-sm shrink-0">
                         🚨
                       </span>
                       <span className="truncate">{notice.title}</span>
