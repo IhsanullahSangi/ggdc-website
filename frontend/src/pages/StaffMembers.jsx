@@ -1,21 +1,213 @@
 import { UserCircle, BookOpen, GraduationCap } from "lucide-react";
 
-// 🌟 STATIC DATA: Add your actual faculty members here
+// 🌟 STATIC DATA: Faculty members sorted and standardized for UI consistency
 const mockStaff = [
   {
     _id: "1",
-    name: "Dr. Ayesha Siddiqa",
-    designation: "Assistant Professor",
-    subject: "Botany",
-    qualification: "Ph.D. in Botany",
+    name: "Mir Hassan Waseer",
+    designation: "Principal & Associate Professor",
+    subject: "Chemistry",
+    qualification: "M.Sc. Chemistry, M.A. English",
+    photoUrl: "",
+  },
+ {
+    _id: "2",
+    name: "Rafique Ahmed Kalwar",
+    designation: "Associate Professor",
+    subject: "English",
+    qualification: "M.Phil. English",
     photoUrl: "",
   },
   {
-    _id: "2",
-    name: "Ms. Fatima Baloch",
+    _id: "3",
+    name: "Muhammad Ali Daudpoto",
+    designation: "Associate Professor",
+    subject: "Botany",
+    qualification: "M.Sc. Botany",
+    photoUrl: "",
+  },
+ {
+    _id: "4",
+    name: "Muhammad Kamil Mahar",
+    designation: "Assistant Professor",
+    subject: "Chemistry",
+    qualification: "M.Sc. Chemistry",
+    photoUrl: "",
+  },
+   {
+    _id: "5",
+    name: "Imtiaz Ahmed Dayo",
+    designation: "Assistant Professor",
+    subject: "Islamic Studies",
+    qualification: "M.A. Islamic Culture",
+    photoUrl: "",
+  },
+  {
+    _id: "6",
+    name: "Saeed Ahmed Shah",
+    designation: "Assistant Professor",
+    subject: "Botany",
+    qualification: "B.A., M.Sc. (Hons)",
+    photoUrl: "",
+  },
+  {
+    _id: "7",
+    name: "Sajida Parveen Shaikh",
+    designation: "Assistant Professor",
+    subject: "Islamic Studies",
+    qualification: "M.A. Islamic Culture, Shahadat-ul-Almia",
+    photoUrl: "",
+  },
+ {
+    _id: "8",
+    name: "Tahira Dayo",
+    designation: "Assistant Professor",
+    subject: "Sindhi",
+    qualification: "M.A. Sindhi Literature",
+    photoUrl: "",
+  },
+ {
+    _id: "9",
+    name: "Nargis Mughal",
+    designation: "Assistant Professor",
+    subject: "Mathematics",
+    qualification: "BS Mathematics, B.Ed.",
+    photoUrl: "",
+  },
+  {
+    _id: "10",
+    name: "Muhammad Sanwal Ghoto",
+    designation: "Assistant Professor",
+    subject: "Zoology",
+    qualification: "M.Sc. Zoology",
+    photoUrl: "",
+  },
+  {
+    _id: "11",
+    name: "Vijesh Kumar",
+    designation: "Assistant Professor",
+    subject: "English",
+    qualification: "M.A. English",
+    photoUrl: "",
+  },
+  {
+    _id: "12",
+    name: "Zulfiqar Ali Chachar",
+    designation: "Assistant Professor",
+    subject: "English",
+    qualification: "M.A. English, B.Ed.",
+    photoUrl: "",
+  },
+ {
+    _id: "13",
+    name: "Quratulain Umed Ali Chachar",
+    designation: "Assistant Professor",
+    subject: "English",
+    qualification: "M.A., LL.B.",
+    photoUrl: "",
+  },
+  {
+    _id: "14",
+    name: "Abdullah Mahar",
+    designation: "Senior Director Physical Education",
+    subject: "Physical Education",
+    qualification: "M.H.P.Ed.",
+    photoUrl: "",
+  },
+    {
+    _id: "15",
+    name: "Kalsoom Mahar",
+    designation: "Lecturer",
+    subject: "Commerce",
+    qualification: "MBA, M.Phil.",
+    photoUrl: "",
+  },
+  {
+    _id: "16",
+    name: "Mehar Raheela",
+    designation: "Lecturer",
+    subject: "Political Science",
+    qualification: "M.A., B.Ed.",
+    photoUrl: "",
+  },
+  {
+    _id: "17",
+    name: "Erum Wahid Bhutto",
+    designation: "Lecturer",
+    subject: "Commerce",
+    qualification: "BBA (Hons)",
+    photoUrl: "",
+  },
+  {
+    _id: "18",
+    name: "Rani",
+    designation: "Lecturer",
+    subject: "Botany",
+    qualification: "M.Sc. Botany",
+    photoUrl: "",
+  },
+   {
+    _id: "19",
+    name: "Azran Hussain",
+    designation: "Lecturer",
+    subject: "Islamic Studies",
+    qualification: "M.A. Islamic Studies & Culture, English, M.Ed.",
+    photoUrl: "",
+  },
+  {
+    _id: "20",
+    name: "Imran Ali",
+    designation: "Lecturer",
+    subject: "Physics",
+    qualification: "BS Physics",
+    photoUrl: "",
+  },
+    {
+    _id: "21",
+    name: "Abida Parveen Siyal",
+    designation: "Lecturer",
+    subject: "Sindhi",
+    qualification: "M.A. Sindhi",
+    photoUrl: "",
+  },
+  {
+    _id: "22",
+    name: "Fazal-ur-Rehman",
     designation: "Lecturer",
     subject: "Computer Science",
-    qualification: "MS Computer Science",
+    qualification: "BSCS",
+    photoUrl: "",
+  },
+   {
+    _id: "23",
+    name: "Ihsanullah",
+    designation: "Lecturer",
+    subject: "Computer Science",
+    qualification: "BSIT",
+    photoUrl: "",
+  },
+  {
+    _id: "24",
+    name: "Shazia",
+    designation: "Lecturer",
+    subject: "Sociology",
+    qualification: "M.A. Sociology, B.Ed.",
+    photoUrl: "",
+  },
+  {
+    _id: "25",
+    name: "Moula Bux Kalhoro",
+    designation: "Lecturer",
+    subject: "Pakistan Studies",
+    qualification: "M.A. Pakistan Studies",
+    photoUrl: "",
+  },
+  {
+    _id: "26",
+    name: "Farhana Hafeez",
+    designation: "Lecturer",
+    subject: "Zoology",
+    qualification: "M.Sc. Zoology",
     photoUrl: "",
   },
 ];
@@ -76,12 +268,12 @@ const StaffMembers = () => {
               {/* Department & Qualification Details */}
               <div className="w-full bg-slate-50 p-3 rounded border border-gray-100 mt-auto">
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-700 mb-2">
-                  <BookOpen size={16} className="text-collegeDark" />
+                  <BookOpen size={16} className="text-collegeDark shrink-0" />
                   <span className="font-medium">{member.subject}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-                  <GraduationCap size={14} className="text-gray-400" />
-                  <span>{member.qualification}</span>
+                  <GraduationCap size={14} className="text-gray-400 shrink-0" />
+                  <span className="leading-snug">{member.qualification}</span>
                 </div>
               </div>
             </div>

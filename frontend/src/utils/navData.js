@@ -14,7 +14,7 @@ export const navLinks = [
       { label: "Fee Structure", href: "/fee-structure" },
       {
         label: "Time Table",
-        href: "https://drive.google.com/file/d/14Tq1_QSCzvdkxS6qVGusT2fAFNC7TCHj/view?usp=sharing",
+        href: "https://drive.google.com/file/d/1VgMomRB5MZvJzu6BuvlZhFP0gUKDEQzw/view?usp=sharing",
       },
       { label: "Curriculum", href: "/curriculum" },
     ],

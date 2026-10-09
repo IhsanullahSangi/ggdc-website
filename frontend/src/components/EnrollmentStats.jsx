@@ -6,7 +6,7 @@ const EnrollmentStats = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   // 🌟 STATIC DATA: Hardcoded target number
-  const [targetNumber] = useState(551);
+  const [targetNumber] = useState(1100);
 
   const sectionRef = useRef(null);
   const animationDuration = 2000;

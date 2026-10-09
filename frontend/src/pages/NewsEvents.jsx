@@ -33,38 +33,39 @@ const FileTextIcon = ({ className }) => (
 export const announcements = [
   {
     _id: "1",
-    title: "Admissions Open for Fall 2026",
-    publishedAt: "2026-09-20",
-    fileUrl: "#",
+    title: "ADS Part I & II Exam Form Submission is Open",
+    publishedAt: "2026-10-09",
+    fileUrl:
+      "https://drive.google.com/file/d/1lYlFBtpOSzdxMcf_oSBZuvoFRchGO4Rh/view?usp=sharing",
   },
-  {
-    _id: "2",
-    title: "Submission of Examination Forms for BS Programs",
-    publishedAt: "2026-09-22",
-    fileUrl: "#",
-  },
-  {
-    _id: "3",
-    title: "Schedule for Practical Examinations - Computer Science",
-    publishedAt: "2026-09-25",
-    fileUrl: "#",
-  },
+  // {
+  //   _id: "2",
+  //   title: "Submission of Examination Forms for BS Programs",
+  //   publishedAt: "2026-09-22",
+  //   fileUrl: "#",
+  // },
+  // {
+  //   _id: "3",
+  //   title: "Schedule for Practical Examinations - Computer Science",
+  //   publishedAt: "2026-09-25",
+  //   fileUrl: "#",
+  // },
 ];
 
 export const newsItems = [
   {
     _id: "4",
-    title: "College secures new IT Lab equipment",
-    publishedAt: "2026-09-15",
-    fileUrl: "#",
+    title: "Introducing the New Official College Website",
+    publishedAt: "2026-10-09",
+    fileUrl: "ggdcghotki.edu.pk",
   },
 ];
 
 export const eventsItems = [
   {
     _id: "5",
-    title: "Annual Sports Day",
-    publishedAt: "2026-11-10",
+    title: "Annual College Sports Week – December 2026",
+    publishedAt: "2026-10-09",
     fileUrl: "#",
   },
 ];
@@ -107,17 +108,14 @@ const NewsEvents = () => {
               announcements.map((item) => (
                 <div
                   key={item._id}
-                  // 🌟 THE FIX: Reduced padding from p-5 to p-3.5 on mobile
-                  className="flex items-center justify-between p-3.5 md:p-6 rounded-lg shadow-sm border-l-4 bg-white hover:shadow-md transition-shadow border-collegeCyan"
+                  // 🌟 THE FIX: Changed to flex-col on mobile to prevent squeezing, switches to row on sm/md
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 md:p-6 rounded-lg shadow-sm border-l-4 bg-white hover:shadow-md transition-shadow border-collegeCyan gap-3 sm:gap-0"
                 >
-                  {/* 🌟 THE FIX: Added flex-1 to allow text to stretch, gap adjusted */}
                   <div className="flex items-center gap-3 md:gap-4 flex-1">
-                    {/* 🌟 THE FIX: Added shrink-0 and made the icon proportionally smaller on mobile */}
                     <div className="p-2 md:p-3 rounded-full bg-cyan-50 text-collegeCyan shrink-0">
                       <Bell className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
                     <div className="flex-1">
-                      {/* 🌟 THE FIX: Dynamic text sizes and line-heights for natural wrapping */}
                       <h3 className="font-heading font-bold text-[14px] sm:text-base md:text-lg text-collegeDark leading-snug">
                         {item.title}
                       </h3>
@@ -127,11 +125,12 @@ const NewsEvents = () => {
                     </div>
                   </div>
 
+                  {/* 🌟 THE FIX: Removed "hidden md:flex" and added "self-end" for perfect mobile alignment */}
                   <a
                     href={item.fileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hidden md:flex items-center gap-1 text-collegeDark hover:text-collegeCyan font-semibold text-sm transition-colors shrink-0 ml-4"
+                    className="flex items-center self-end sm:self-auto gap-1 text-collegeDark hover:text-collegeCyan font-semibold text-[13px] md:text-sm transition-colors shrink-0 sm:ml-4"
                   >
                     View Details <ChevronRight size={16} />
                   </a>

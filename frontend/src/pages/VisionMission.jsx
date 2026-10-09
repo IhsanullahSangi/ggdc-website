@@ -18,14 +18,7 @@ const VisionMission = () => {
             Vision
           </h2>
           <p className="text-gray-700 leading-loose text-base md:text-lg text-justify md:text-left">
-            The vision of Government Girls Degree College Ghotki is to enhance
-            its position as a premier seat of higher learning in the region and
-            to achieve distinction for creativity, innovation and excellence.
-            The College is committed to discovery, dissemination and
-            preservation of knowledge based on creativity, innovation, and
-            excellence in teaching. The college aims at inculcating an academic
-            environment which values integrity, quality and teamwork and serves
-            as an engine for socio-economic development of the country.
+            In steadfast alignment with the Government of Sindh’s mandate to provide accessible, equitable, and excellent higher education, Government Girls Degree College Ghotki envisions emerging as a premier center of academic excellence and female empowerment. We are committed to fostering an inclusive, forward-looking learning environment that equips young women with modern knowledge, critical thinking, and strong ethical values. Our ultimate vision is to transform our students into confident leaders, skilled professionals, and socially responsible citizens who champion inclusive values and drive positive socio-economic progress within their communities and beyond.
           </p>
         </div>
       </section>
@@ -40,13 +33,7 @@ const VisionMission = () => {
             Mission
           </h2>
           <p className="text-gray-700 leading-loose text-base md:text-lg text-justify md:text-left">
-            To develop human resources by imparting quality education in all
-            fields of science, arts and technology also to develop a body of
-            teachers and taught who would be aware and proud of their culture
-            and posses a high sense of honour and integrity and work with
-            selfless dedication, commitment and responsibility towards society
-            to contribute to the prosperity of people and peace and harmony in
-            the country.
+           To deliver accessible, high-quality higher education that fosters the intellectual, personal, and moral growth of young women in Ghotki and its surrounding regions. We are committed to providing a secure, inclusive, and dynamic learning environment that strictly upholds the academic standards and progressive educational policies of the Government of Sindh. Through a blend of rigorous academics, modern skill development, and character-building initiatives, our mission is to nurture critical thinking, bridge regional educational divides, and equip our students with the practical competencies required to excel in their future careers and civic lives.
           </p>
         </div>
       </section>

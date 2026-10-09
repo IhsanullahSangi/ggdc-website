@@ -29,7 +29,7 @@ const AffiliationGovernance = () => {
               <h3 className="text-lg font-heading font-bold text-collegeDark mb-3 text-center">
                 BISE Sukkur
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 All Intermediate programs (Pre-Medical, Pre-Engineering,
                 Commerce, and Computer Science) are officially affiliated with
                 the Board of Intermediate and Secondary Education (BISE) Sukkur.
@@ -44,7 +44,7 @@ const AffiliationGovernance = () => {
               <h3 className="text-lg font-heading font-bold text-collegeDark mb-3 text-center">
                 SALU Khairpur
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 Our Degree and BS Programs are conducted under the prestigious
                 affiliation of Shah Abdul Latif University (SALU), Khairpur,
                 ensuring recognized and high-quality higher education.
@@ -59,7 +59,7 @@ const AffiliationGovernance = () => {
               <h3 className="text-lg font-heading font-bold text-collegeDark mb-3 text-center">
                 HEC Recognized
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 The degree programs offered at Government Girls Degree College
                 Ghotki are fully recognized by the Higher Education Commission
                 (HEC) of Pakistan.

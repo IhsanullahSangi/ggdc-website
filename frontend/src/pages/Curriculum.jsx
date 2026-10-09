@@ -3,10 +3,10 @@ import { Book, Library, FileText, ExternalLink, Globe } from "lucide-react";
 const Curriculum = () => {
   // 🌟 STATIC DATA: Paste your actual Google Drive or board links here
   const links = {
-    c11: "#",
-    c12: "#",
-    cADS: "#",
-    cBS: "#",
+    c11: "https://portal.stbb.edu.pk/ebooks/class.php?id=14",
+    c12: "https://portal.stbb.edu.pk/ebooks/class.php?id=15",
+    cADS: "https://drive.google.com/file/d/1_3oleKL1U5gd4AHEdksHtGkzC3f-2hZ2/view?usp=sharing",
+    cBS: "https://drive.google.com/file/d/1A5yQNTibWwdaXpKNx6Prorrh-VHt2F7P/view?usp=sharing",
   };
 
   return (
@@ -38,7 +38,7 @@ const Curriculum = () => {
             <h3 className="text-xl font-heading font-bold text-collegeDark mb-2 text-center">
               Class XI (First Year)
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
               Access the official digital textbooks and syllabus outlines
               provided by the Sindh Textbook Board.
             </p>
@@ -60,9 +60,9 @@ const Curriculum = () => {
             <h3 className="text-xl font-heading font-bold text-collegeDark mb-2 text-center">
               Class XII (Second Year)
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
-              Download the official second-year curriculum materials and
-              textbooks directly from the portal.
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
+               Access the official digital textbooks and syllabus outlines
+              provided by the Sindh Textbook Board.
             </p>
             <a
               href={links.c12}
@@ -82,7 +82,7 @@ const Curriculum = () => {
             <h3 className="text-xl font-heading font-bold text-collegeDark mb-2 text-center">
               Associate Degree in Science
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
               Detailed semester-wise course outlines and recommended reading
               materials for the ADS program.
             </p>
@@ -104,7 +104,7 @@ const Curriculum = () => {
             <h3 className="text-xl font-heading font-bold text-collegeDark mb-2 text-center">
               BS Programs (4-Years)
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
               Comprehensive HEC-approved syllabus outlines spanning all 8
               semesters for our BS Degree programs.
             </p>

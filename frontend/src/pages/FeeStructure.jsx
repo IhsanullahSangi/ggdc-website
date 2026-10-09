@@ -3,8 +3,8 @@ import { BookOpen, FileText, ExternalLink, GraduationCap } from "lucide-react";
 const FeeStructure = () => {
   // 🌟 STATIC DATA: Paste your actual Google Drive PDF links here
   const links = {
-    feeLinkAD: "#",
-    feeLinkBS: "#",
+    feeLinkAD: "https://drive.google.com/file/d/1lYlFBtpOSzdxMcf_oSBZuvoFRchGO4Rh/view?usp=sharing",
+    feeLinkBS: "https://drive.google.com/file/d/1CubOubqJVYV72mSenHxclBplH_KjSG_V/view?usp=sharing",
   };
 
   return (
@@ -49,10 +49,8 @@ const FeeStructure = () => {
                 Rs. 0 / Semester
               </span>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed mt-auto">
-              Under the official policy of the Government of Sindh, all
-              Intermediate education is provided 100% free of charge to promote
-              female literacy and higher education.
+            <p className="text-gray-600 text-sm leading-relaxed mt-auto text-justify">
+              Under the official policy of the Government of Sindh, all Intermediate education is provided 100% free of charge for all students to promote universal literacy and higher education.
             </p>
           </div>
 
@@ -67,10 +65,10 @@ const FeeStructure = () => {
             <p className="text-sm text-gray-500 mb-6 font-medium text-center">
               Associate Degree of Science (ADS)
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
               The fee structure for Associate Degree programs is highly
-              subsidized. Please refer to the official document for
-              semester-wise breakdown and admission fees.
+              subsidized. Please refer to the official attached document for
+              annual fees structure.
             </p>
             <a
               href={links.feeLinkAD}
@@ -93,7 +91,7 @@ const FeeStructure = () => {
             <p className="text-sm text-gray-500 mb-6 font-medium text-center">
               BS-Botany (4 Year)
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
               Detailed tuition, examination, and enrollment fee requirements for
               all 4-Year BS Programs affiliated with SALU Khairpur.
             </p>

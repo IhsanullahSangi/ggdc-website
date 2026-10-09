@@ -4,12 +4,12 @@ const Downloads = () => {
   // 🌟 STATIC DATA: Add your actual Google Drive PDF links here
   const admissionForms = [
     // Example format:
-    // { _id: "1", title: "BS Programs Admission Form 2026", fileUrl: "#" }
+    { _id: "1", title: "Admission Form", fileUrl: "https://drive.google.com/file/d/1mQRmXY2MIJUdx6HPFm08yjsyaI7wopEK/view?usp=sharing" }
   ];
 
   const challanForms = [
     // Example format:
-    // { _id: "2", title: "First Semester Fee Challan", fileUrl: "#" }
+    { _id: "2", title: "Fee Challan", fileUrl: "https://drive.google.com/file/d/14iwjxouJUmu5jPnTCqDPXhcN1vL4DwQo/view?usp=sharing" }
   ];
 
   return (
@@ -28,7 +28,7 @@ const Downloads = () => {
             Official Forms
           </h2>
           <div className="w-24 h-1 bg-collegeGreen mx-auto mt-4 mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-justify">
             Download official admission forms and bank challans directly to your
             device. All files are provided in secure, print-ready PDF formats.
           </p>
@@ -49,7 +49,7 @@ const Downloads = () => {
                 Intermediate & Degree Programs
               </p>
 
-              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+              <p className="text-gray-600 text-sm leading-relaxed mb-8 text-justify">
                 Download the official admission application forms for all
                 respective groups. Please ensure you fill out all fields
                 accurately before submitting them to the college admission

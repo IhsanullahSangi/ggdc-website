@@ -268,9 +268,9 @@ ${formData.message}
                   <div>
                     <h4 className="font-bold text-gray-800">Campus Address</h4>
                     <p className="text-gray-600 text-sm mt-1 leading-relaxed">
-                      Government Girls Degree College,
+                      Government Girls Degree College Ghotki,
                       <br />
-                      Ghotki, Sindh, Pakistan
+                      Near DC School Ghotki, Sindh, Pakistan
                     </p>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ ${formData.message}
                   <div>
                     <h4 className="font-bold text-gray-800">Phone Number</h4>
                     <p className="text-gray-600 text-sm mt-1">
-                      +92 (0723) XXXXXXX
+                      0334-3377277
                     </p>
                   </div>
                 </div>

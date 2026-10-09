@@ -52,7 +52,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-5 text-gray-300 text-sm md:text-base mb-10">
               <li className="flex items-start gap-4">
                 <Phone size={20} className="text-collegeCyan shrink-0 mt-0.5" />
-                <span>0723-XXXXXX</span>
+                <span>0334-3377277</span>
               </li>
               <li className="flex items-start gap-4">
                 <MapPin
@@ -60,7 +60,7 @@ const Footer = () => {
                   className="text-collegeCyan shrink-0 mt-0.5"
                 />
                 <span className="leading-relaxed">
-                  Government Girls Degree College Ghotki, Sindh, Pakistan
+                  Government Girls Degree College Ghotki, Near DC School Ghotki, Sindh, Pakistan
                 </span>
               </li>
               <li className="flex items-start gap-4">
@@ -75,7 +75,7 @@ const Footer = () => {
             </ul>
 
             <h4 className="text-white font-bold text-xl mb-4 tracking-wide">
-              College Working Hours
+              College Timings
             </h4>
             <ul className="flex flex-col gap-2 text-gray-300 text-sm md:text-base">
               <li>Mon - Thu: 08:30 AM to 01:30 PM</li>
