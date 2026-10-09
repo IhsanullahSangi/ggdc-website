@@ -27,9 +27,12 @@ export const navLinks = [
   //     { label: "Entry Test Results", href: "/admissions/results" },
   //   ],
   // },
-  {
-    name: "STAFF PROFILES",
-    subLinks: [{ label: "Faculty & Staff", href: "/faculty" }],
+  // {
+  //   name: "Faculty Members",
+  //   subLinks: [{ label: "Faculty & Staff", href: "/faculty" }],
+  // },
+   {
+    name: "Faculty Members", href: "/faculty"
   },
   {
     name: "NEWS & EVENTS",

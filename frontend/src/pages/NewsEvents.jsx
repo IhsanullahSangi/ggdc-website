@@ -57,7 +57,7 @@ export const newsItems = [
     _id: "4",
     title: "Introducing the New Official College Website",
     publishedAt: "2026-10-09",
-    fileUrl: "ggdcghotki.edu.pk",
+    fileUrl: "https://ggdcghotki.edu.pk/",
   },
 ];
 
