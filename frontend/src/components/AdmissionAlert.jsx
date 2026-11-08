@@ -5,7 +5,7 @@ import { FileSignature, FileText, Award, X } from "lucide-react";
 const AdmissionAlert = () => {
   // 🌟 STATIC DATA: Manually change admissionPhase to "admission", "admitCard", "result", or "none"
   const [settings] = useState({
-    admissionPhase: "none",
+    admissionPhase: "admission",
     actionTitle: "",
     actionSubtitle: "",
   });
