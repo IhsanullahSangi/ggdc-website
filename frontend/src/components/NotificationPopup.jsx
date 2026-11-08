@@ -11,7 +11,7 @@ const NotificationPopup = () => {
     content: "",
     imageUrl: "https://res.cloudinary.com/lpoftm4n/image/upload/v1794115900/Orange_and_Purple_Modern_University_Admission_Instagram_Post.jpg",
     linkText: "Apply Now",
-    linkUrl: "#",
+    linkUrl: "/admissions/online-apply",
   });
 
   if (!isOpen) return null;
