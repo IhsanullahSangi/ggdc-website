@@ -3,14 +3,14 @@ import { X, Bell, Info } from "lucide-react";
 
 const NotificationPopup = () => {
   // Set to true manually in code if you want to display an urgent notice
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   // Hardcoded static data for when isOpen is set to true
   const [popupData] = useState({
-    title: "Important Update",
-    content: "Please note that college admissions are currently ongoing.",
-    imageUrl: "",
-    linkText: "Click here for more details",
+    title: "",
+    content: "",
+    imageUrl: "https://res.cloudinary.com/lpoftm4n/image/upload/v1794115900/Orange_and_Purple_Modern_University_Admission_Instagram_Post.jpg",
+    linkText: "Apply Now",
     linkUrl: "#",
   });
 

@@ -15,8 +15,8 @@ const AdmissionAlert = () => {
   // Keep phaseConfig for icons, links, colors, and DEFAULT fallback text
   const phaseConfig = {
     admission: {
-      defaultTitle: "BS Admissions Open",
-      defaultSubtitle: "Apply online for Fall 2026",
+      defaultTitle: "BS-Botany Admission Open",
+      defaultSubtitle: "Apply Now for Session 2027",
       icon: <FileSignature className="w-6 h-6 animate-pulse" />,
       link: "/admissions/online-apply",
       bgColor: "bg-collegeGreen",

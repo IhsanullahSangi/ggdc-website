@@ -6,16 +6,16 @@ const OnlineApply = () => {
   // 🌟 STATIC DATA: Hardcoded phase and page data
   const [isValidPhase] = useState(true);
   const [pageData] = useState({
-    admissionHeading: "BS PROGRAM ADMISSIONS",
-    admissionSubheading: "Fall Intake",
-    formAvailableDate: "Oct 1, 2026",
-    lastDateToApply: "Oct 25, 2026",
-    preEntryTestDate: "Nov 5, 2026",
+    admissionHeading: "BS-BOTANY ADMISSIONS",
+    admissionSubheading: "Session 2027",
+    formAvailableDate: "Nov 4, 2026",
+    lastDateToApply: "Nov 30, 2026",
+    preEntryTestDate: "Announced Later",
     eligibilityCriteria:
-      "Minimum 50% marks in Intermediate (HSC) or equivalent.\nValid Domicile and PRC of relevant districts.",
+      "Girls who have Passed Intermediate (HSC) or equivalent in Pre-Medical during the years 2020 to 2026 with Minimum 50% marks.",
     requiredDocuments:
-      "CNIC or B-Form (Front/Back)\nMatriculation Pacca Certificate\nIntermediate Marksheet\nPassport Size Photo (Blue bg)",
-    googleFormLink: "", // Add your actual Google Form embed link here
+      "3 Passport Size Photos\nCNIC or B-Form \nMatriculation Marksheet\nIntermediate Marksheet",
+    googleFormLink: "https://docs.google.com/forms/d/e/1FAIpQLSeXm3O35I591YGds29Dn8N4BlpioHooY-RdKQuRVimLsr9-9Q/viewform?usp=publish-editor", // Add your actual Google Form embed link here
   });
 
   if (isValidPhase === false) {
