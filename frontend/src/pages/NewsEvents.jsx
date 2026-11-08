@@ -31,19 +31,20 @@ const FileTextIcon = ({ className }) => (
 
 // 🌟 EXPORT THE DATA
 export const announcements = [
-  {
+   {
     _id: "1",
+    title: "Admission Open for BS-Botany (4-Year Program) Session 2027",
+    publishedAt: "2026-11-04",
+    fileUrl: "https://ggdcghotki.edu.pk/admissions/online-apply",
+  },
+  {
+    _id: "2",
     title: "ADS Part I & II Exam Form Submission is Open",
     publishedAt: "2026-10-09",
     fileUrl:
       "https://drive.google.com/file/d/1lYlFBtpOSzdxMcf_oSBZuvoFRchGO4Rh/view?usp=sharing",
   },
-  // {
-  //   _id: "2",
-  //   title: "Submission of Examination Forms for BS Programs",
-  //   publishedAt: "2026-09-22",
-  //   fileUrl: "#",
-  // },
+ 
   // {
   //   _id: "3",
   //   title: "Schedule for Practical Examinations - Computer Science",
