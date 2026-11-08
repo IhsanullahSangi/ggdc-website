@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, Bell, Info } from "lucide-react";
+import { Link } from "react-router-dom"; // 🌟 ADDED: Link for smooth internal routing
 
 const NotificationPopup = () => {
   // Set to true manually in code if you want to display an urgent notice
@@ -22,7 +23,7 @@ const NotificationPopup = () => {
         <div className="bg-collegeDark text-white px-4 py-3 flex justify-between items-center border-b-2 border-collegeCyan">
           <div className="flex items-center gap-2 font-heading font-bold text-lg tracking-wide">
             <Bell size={20} className="text-collegeCyan animate-bounce" />
-            <span>{popupData.title}</span>
+            <span>{popupData.title || "Notification"}</span>
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -37,7 +38,9 @@ const NotificationPopup = () => {
             <img
               src={popupData.imageUrl}
               alt="Popup Notice Banner"
-              className="w-full h-auto max-h-64 object-contain rounded-md mb-4 border border-gray-100 shadow-sm"
+              // 🌟 THE FIX 1: Removed max-h-64 and object-contain. 
+              // Now it stretches naturally to fill the width of the container.
+              className="w-full h-auto rounded-md mb-4 border border-gray-100 shadow-sm"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.style.display = "none";
@@ -54,14 +57,14 @@ const NotificationPopup = () => {
           )}
 
           {popupData.linkUrl && (
-            <a
-              href={popupData.linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            // 🌟 THE FIX 2: Used Link, removed target="_blank", and added onClick
+            <Link
+              to={popupData.linkUrl}
+              onClick={() => setIsOpen(false)}
               className="mt-4 text-collegeCyan font-bold hover:text-collegeDark underline underline-offset-4 transition-colors"
             >
               {popupData.linkText}
-            </a>
+            </Link>
           )}
 
           <button

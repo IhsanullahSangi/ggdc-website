@@ -15,7 +15,7 @@ const OnlineApply = () => {
       "Girls who have Passed Intermediate (HSC) or equivalent in Pre-Medical during the years 2020 to 2026 with Minimum 50% marks.",
     requiredDocuments:
       "3 Passport Size Photos\nCNIC or B-Form \nMatriculation Marksheet\nIntermediate Marksheet",
-    googleFormLink: "https://docs.google.com/forms/d/e/1FAIpQLSeXm3O35I591YGds29Dn8N4BlpioHooY-RdKQuRVimLsr9-9Q/viewform?usp=publish-editor", // Add your actual Google Form embed link here
+    googleFormLink: "https://docs.google.com/forms/d/e/1FAIpQLSeXm3O35I591YGds29Dn8N4BlpioHooY-RdKQuRVimLsr9-9Q/viewform?embedded=true", // Add your actual Google Form embed link here
   });
 
   if (isValidPhase === false) {
