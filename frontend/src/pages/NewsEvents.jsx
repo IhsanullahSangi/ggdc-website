@@ -35,7 +35,7 @@ export const announcements = [
     _id: "1",
     title: "Admission Open for BS-Botany (4-Year Program) Session 2027",
     publishedAt: "2026-11-04",
-    fileUrl: "https://ggdcghotki.edu.pk/admissions/online-apply",
+    fileUrl: "/admissions/online-apply",
   },
   {
     _id: "2",
