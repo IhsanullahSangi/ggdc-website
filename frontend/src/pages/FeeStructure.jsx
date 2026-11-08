@@ -76,7 +76,7 @@ const FeeStructure = () => {
               rel="noopener noreferrer"
               className="mt-auto flex items-center justify-center gap-2 w-full bg-collegeCyan text-white py-3 px-4 rounded hover:bg-opacity-90 transition-colors font-semibold tracking-wide text-sm"
             >
-              View PDF Structure <ExternalLink size={18} />
+              View PDF <ExternalLink size={18} />
             </a>
           </div>
 
@@ -101,7 +101,7 @@ const FeeStructure = () => {
               rel="noopener noreferrer"
               className="mt-auto flex items-center justify-center gap-2 w-full bg-collegeDark text-white py-3 px-4 rounded hover:bg-opacity-90 transition-colors font-semibold tracking-wide text-sm"
             >
-              View PDF Structure <ExternalLink size={18} />
+              View PDF <ExternalLink size={18} />
             </a>
           </div>
         </div>

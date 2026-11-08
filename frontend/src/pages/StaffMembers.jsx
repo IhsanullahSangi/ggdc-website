@@ -10,14 +10,14 @@ const mockStaff = [
     qualification: "M.Sc. Chemistry, M.A. English",
     photoUrl: "",
   },
- {
-    _id: "2",
-    name: "Rafique Ahmed Kalwar",
-    designation: "Associate Professor",
-    subject: "English",
-    qualification: "M.Phil. English",
-    photoUrl: "",
-  },
+//  {
+//     _id: "2",
+//     name: "Rafique Ahmed Kalwar",
+//     designation: "Associate Professor",
+//     subject: "English",
+//     qualification: "M.Phil. English",
+//     photoUrl: "",
+//   },
   {
     _id: "3",
     name: "Muhammad Ali Daudpoto",
